@@ -5,6 +5,8 @@ class Palette {
   static const Color white = Color(0xFFFFFFFF);
   static const Color tomato = Color(0xFFEF3434);
   static const Color bgGrey = Color(0xFFecf0f6);
+  static const Color blueyGrey = Color(0xFFB2B2C3);
+  static const Color silverBackground = Color.fromRGBO(218, 223, 238, 1);
 
   static MaterialColor materialColor = MaterialColor(
     0xFFEF3434,
