@@ -92,6 +92,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
@@ -278,7 +284,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-08-02T00:35:02.487586Z",
+  "generated": "2021-08-02T02:25:26.903404Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

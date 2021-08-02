@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import 'package:vdev20210801/components/customText.dart';
@@ -86,6 +87,26 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             CategoryList(),
+            Container(
+              width: width,
+              margin: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: CustomText(
+                      text: 'Info',
+                    ),
+                  ),
+                  Spacer(),
+                  CustomText(
+                      text: 'Signed-in at: ' +
+                          DateFormat('MMM-dd-yyyy kk:mm a')
+                              .format(userProvider.userModel.dateTime))
+                ],
+              ),
+            ),
           ],
         ),
       ),
