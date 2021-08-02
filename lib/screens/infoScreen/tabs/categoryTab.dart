@@ -6,17 +6,23 @@ import 'package:vdev20210801/constants/customMediaQuery.dart';
 import 'package:vdev20210801/constants/palette.dart';
 import 'package:vdev20210801/screens/dashboard/providers/productProvider.dart';
 
-class CategoryList extends StatefulWidget {
-  const CategoryList({Key key}) : super(key: key);
+class CategoryTab extends StatefulWidget {
+  const CategoryTab({Key key}) : super(key: key);
 
   @override
-  _CategoryListState createState() => _CategoryListState();
+  _CategoryTabState createState() => _CategoryTabState();
 }
 
-class _CategoryListState extends State<CategoryList> {
+class _CategoryTabState extends State<CategoryTab>
+    with AutomaticKeepAliveClientMixin<CategoryTab> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final double height = CustomMediaQuery.height(context);
+
     return Container(
       height: height * 0.58,
       margin: EdgeInsets.all(12),

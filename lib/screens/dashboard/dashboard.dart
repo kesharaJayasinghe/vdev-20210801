@@ -7,7 +7,7 @@ import 'package:vdev20210801/components/verticalSpacing.dart';
 import 'package:vdev20210801/constants/customMediaQuery.dart';
 import 'package:vdev20210801/constants/palette.dart';
 import 'package:vdev20210801/screens/dashboard/providers/productProvider.dart';
-import 'package:vdev20210801/screens/dashboard/widgets/categoryList.dart';
+import 'package:vdev20210801/screens/infoScreen/tabs/categoryTab.dart';
 import 'package:vdev20210801/screens/signinScreen/providers/userProvider.dart';
 import 'package:vdev20210801/utils/cacheData.dart';
 
@@ -86,7 +86,7 @@ class _DashboardState extends State<Dashboard> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            CategoryList(),
+            CategoryTab(),
             Container(
               width: width,
               margin: EdgeInsets.all(10),
@@ -94,7 +94,9 @@ class _DashboardState extends State<Dashboard> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/infoScreen');
+                    },
                     child: CustomText(
                       text: 'Info',
                     ),
