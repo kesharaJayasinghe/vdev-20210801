@@ -80,6 +80,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
@@ -124,6 +136,12 @@
     {
       "name": "path_provider_windows",
       "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/keshara/keshDev/tools/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -260,7 +278,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-08-01T23:39:18.524013Z",
+  "generated": "2021-08-02T00:35:02.487586Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

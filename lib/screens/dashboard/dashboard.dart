@@ -5,19 +5,29 @@ import 'package:vdev20210801/components/customText.dart';
 import 'package:vdev20210801/components/verticalSpacing.dart';
 import 'package:vdev20210801/constants/customMediaQuery.dart';
 import 'package:vdev20210801/constants/palette.dart';
+import 'package:vdev20210801/screens/dashboard/providers/productProvider.dart';
+import 'package:vdev20210801/screens/dashboard/widgets/categoryList.dart';
 import 'package:vdev20210801/screens/signinScreen/providers/userProvider.dart';
 import 'package:vdev20210801/utils/cacheData.dart';
 
 class Dashboard extends StatefulWidget {
   static const String route = '/dashboard';
 
-  const Dashboard({ Key key }) : super(key: key);
+  const Dashboard({Key key}) : super(key: key);
 
   @override
   _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
+  @override
+  void initState() {
+    super.initState();
+    final productProvider =
+        Provider.of<ProductProvider>(context, listen: false);
+    productProvider.getProducts();
+  }
+
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
@@ -33,7 +43,8 @@ class _DashboardState extends State<Dashboard> {
         ),
       ),
       body: SingleChildScrollView(
-        child:  Column(
+        scrollDirection: Axis.vertical,
+        child: Column(
           children: [
             Container(
               width: width,
@@ -64,6 +75,17 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
+            Container(
+              width: width,
+              padding: EdgeInsets.only(left: 12),
+              child: CustomText(
+                text: 'Product Categories',
+                textAlign: TextAlign.start,
+                textSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            CategoryList(),
           ],
         ),
       ),

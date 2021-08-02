@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:vdev20210801/constants/customTheme.dart';
 import 'package:vdev20210801/router.dart';
+import 'package:vdev20210801/screens/dashboard/providers/productProvider.dart';
 import 'package:vdev20210801/screens/signinScreen/providers/userProvider.dart';
 
 void main() {
@@ -17,7 +18,10 @@ class VdevApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => UserProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => ProductProvider()),
+      ],
       child: MaterialApp(
         onGenerateRoute: CustomRouter.generateRoute,
         theme: CustomTheme.themeData,
