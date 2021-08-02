@@ -111,7 +111,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       if (!_formKey.currentState.validate()) return;
                       AlertUtils.showProgressDialog(
                           context, 'Please wait while \nwe sign you in....');
-                      await Future.delayed(Duration(seconds: 1));
+                      await Future.delayed(Duration(seconds: 3));
                       await userProvider.authUser(
                           emailController.text, passwordController.text);
                       AlertUtils.closeProgressDialog(context);
