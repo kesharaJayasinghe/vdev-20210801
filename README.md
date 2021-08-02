@@ -29,7 +29,7 @@ git push -u origin main
 ```
 
 
-# Flutter development environment setup
+## Flutter development environment setup
 
 (6) 
 
@@ -91,3 +91,19 @@ Run the following command to see if everything is successful
 ```sh
 flutter doctor -v
 ```
+
+(7)
+## Upgrade Flutter Project
+
+To upgrade flutter to the latest stable release use the below command
+
+```sh
+flutter upgrade
+```
+
+To verify run;
+```sh
+flutter channel
+```
+
+Next update the packages
