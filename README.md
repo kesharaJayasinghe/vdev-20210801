@@ -107,3 +107,6 @@ flutter channel
 ```
 
 Next update the packages
+
+(8)
+Flutter applications are hosted in the Flutter engine. The core libraries are implemented here. Flutter applications runs in a VM during development and this allows the features such as 'hot reload'. During release build, Flutter application is compiled into machine code. Flutter developments are done through the flutter framework. Flutter engine and Flutter framework is connected through dart:ui. Many features used during developments are implemented as packages.
