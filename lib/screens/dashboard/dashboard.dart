@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:vdev20210801/components/customText.dart';
+import 'package:vdev20210801/components/verticalSpacing.dart';
+import 'package:vdev20210801/constants/customMediaQuery.dart';
 import 'package:vdev20210801/constants/palette.dart';
+import 'package:vdev20210801/screens/signinScreen/providers/userProvider.dart';
+import 'package:vdev20210801/utils/cacheData.dart';
 
 class Dashboard extends StatefulWidget {
   static const String route = '/dashboard';
@@ -14,6 +20,8 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final double width = CustomMediaQuery.width(context);
     return Scaffold(
       backgroundColor: Palette.bgGrey,
       appBar: AppBar(
@@ -28,7 +36,33 @@ class _DashboardState extends State<Dashboard> {
         child:  Column(
           children: [
             Container(
-              child: CustomText(text: 'Dashboard'),
+              width: width,
+              margin: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    alignment: Alignment.centerRight,
+                    width: width * 0.6,
+                    child: CustomText(
+                      text: userProvider.userModel.email,
+                      textSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  VerticalSpacing(width: 15),
+                  ElevatedButton(
+                    onPressed: () async {
+                      await CacheData().deleteUserInfo();
+                      userProvider.removeUser();
+                      Navigator.pushReplacementNamed(context, '/signinScreen');
+                    },
+                    child: CustomText(
+                      text: 'Sign-Out',
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
